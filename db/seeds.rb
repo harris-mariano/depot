@@ -52,3 +52,9 @@ Product.create!(title: 'Ruby Performance Optimization',
       </p>},
   image_url: 'adrpo.jpg',
   price: 46.00)
+
+  User.destroy_all
+
+  2.times do |i|
+    User.create!(email: "user-#{i + 1}@test.com", password: "password", password_confirmation: "password")
+  end

@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'webpacker', '~> 3.0'
 gem 'webpacker'
 gem 'i18n-js'
+gem 'devise', '~> 4.8'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,6 +46,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 4.1', '>= 4.1.2'
   gem 'rails-controller-testing'
+  gem 'rails_db', '~> 2.1'
 end
 
 group :development do

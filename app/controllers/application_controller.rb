@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :authorize
+  # before_action :authorize
+  before_action :authenticate_user!
   before_action :set_i18n_locale_from_params
   protect_from_forgery with: :exception
 
