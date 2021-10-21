@@ -38,6 +38,7 @@ gem 'webpacker'
 gem 'i18n-js'
 gem 'devise', '~> 4.8'
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
+gem 'factory_bot'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

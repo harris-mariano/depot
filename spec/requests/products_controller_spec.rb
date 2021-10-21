@@ -2,9 +2,11 @@ require 'rails_helper'
 
 RSpec.describe "ProductsControllers", type: :request do
   fixtures :products
+  
 
   before(:each) do
-    expect_any_instance_of(ProductsController).to receive(:authorize).and_return(true)
+    # expect_any_instance_of(ProductsController).to receive(:authorize).and_return(true)
+    login_user
     @product = products(:one)
     @title = "The Great Book #{rand(1000)}"
   end
