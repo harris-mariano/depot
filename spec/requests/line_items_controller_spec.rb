@@ -7,6 +7,8 @@ RSpec.describe "LineItemsControllers", type: :request do
   before :each do
     @line_item = line_items(:one)
     @product = products(:ruby)
+
+    login_user
   end
 
   def authorize
@@ -14,13 +16,13 @@ RSpec.describe "LineItemsControllers", type: :request do
   end
 
   it 'should get index' do
-    authorize
+    # authorize
     get line_items_url
     expect(response).to be_success
   end
 
   it 'should get new' do
-    authorize
+    # authorize
     get new_line_item_url
     expect(response).to be_success
   end
@@ -36,25 +38,25 @@ RSpec.describe "LineItemsControllers", type: :request do
   # end
 
   it 'should get edit' do
-    authorize
+    # authorize
     get edit_line_item_url(@line_item)
     expect(response).to be_success
   end
 
   it 'should update line item' do
-    authorize
+    # authorize
     patch line_item_url(@line_item), params: { line_item: { product_id: @line_item.product_id } }
     expect(response).to redirect_to(@line_item)
   end
 
   it 'should show line item' do
-    authorize
+    # authorize
     get line_item_url(@line_item)
     expect(response).to be_success
   end
 
   it 'should destroy line item' do
-    authorize
+    # authorize
     delete line_item_url(@line_item)
     expect(response).to redirect_to(line_items_url)
   end

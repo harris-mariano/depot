@@ -4,7 +4,8 @@ RSpec.describe "UsersControllers", type: :request do
   fixtures :users
 
   before(:each) do
-    expect_any_instance_of(UsersController).to receive(:authorize).and_return(true)
+    # expect_any_instance_of(UsersController).to receive(:authorize).and_return(true)
+    login_user
     @user = users(:one)
   end
 
@@ -24,7 +25,7 @@ RSpec.describe "UsersControllers", type: :request do
 
   it "should create user" do
     post users_url, params: user_params
-    expect(response).to redirect_to(users_url)
+    expect(response).to redirect_to(authenticated_root_url)
   end
 
   it "should get edit" do

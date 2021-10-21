@@ -5,6 +5,8 @@ RSpec.describe "OrdersControllers", type: :request do
 
   before(:each) do
     @order = orders(:one)
+
+    login_user
   end
 
   def order_params
@@ -16,7 +18,7 @@ RSpec.describe "OrdersControllers", type: :request do
   end
 
   it 'should get index' do
-    authorize
+    # authorize
     get orders_url
     expect(response).to be_success
   end
@@ -33,19 +35,19 @@ RSpec.describe "OrdersControllers", type: :request do
   end
 
   it 'should get edit' do
-    authorize
+    # authorize
     get edit_order_url(@order)
     expect(response).to be_success
   end
 
   it 'should update order' do
-    authorize
+    # authorize
     patch order_url(@order), params: order_params
     expect(response).to redirect_to(@order)
   end
 
   it 'should destroy order' do
-    authorize
+    # authorize
     delete order_url(@order)
 
     expect(response).to redirect_to(orders_url)

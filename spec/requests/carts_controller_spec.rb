@@ -6,6 +6,7 @@ RSpec.describe "CartsControllers", type: :request do
 
   before :each do
     @cart = carts(:one)
+     login_user
   end
 
   def authorize
@@ -17,13 +18,13 @@ RSpec.describe "CartsControllers", type: :request do
   end
 
   it 'should get index' do
-    authorize
+    # authorize
     get carts_url
     expect(response).to be_success
   end
 
   it 'should get new' do
-    authorize
+    # authorize
     get new_cart_url
     expect(response).to be_success
   end
@@ -34,7 +35,7 @@ RSpec.describe "CartsControllers", type: :request do
   end
 
   it 'should get edit' do
-    authorize
+    # authorize
     get cart_url(@cart)
     expect(response).to be_success
   end
@@ -45,7 +46,7 @@ RSpec.describe "CartsControllers", type: :request do
   end
 
   it 'should destroy cart' do
-    authorize
+    # authorize
     post line_items_url, params: { product_id: products(:ruby).id }
     @cart = Cart.find(session[:cart_id]) 
 
