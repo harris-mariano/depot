@@ -11,9 +11,9 @@ RSpec.describe "LineItemsControllers", type: :request do
     login_user
   end
 
-  def authorize
-    expect_any_instance_of(LineItemsController).to receive(:authorize).and_return(true)
-  end
+  # def authorize
+  #   expect_any_instance_of(LineItemsController).to receive(:authorize).and_return(true)
+  # end
 
   it 'should get index' do
     # authorize

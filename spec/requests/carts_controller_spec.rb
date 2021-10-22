@@ -9,9 +9,9 @@ RSpec.describe "CartsControllers", type: :request do
      login_user
   end
 
-  def authorize
-    expect_any_instance_of(CartsController).to receive(:authorize).and_return(true)
-  end
+  # def authorize
+  #   expect_any_instance_of(CartsController).to receive(:authorize).and_return(true)
+  # end
 
   def cart_params
     { cart: {  } }

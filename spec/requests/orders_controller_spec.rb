@@ -13,9 +13,9 @@ RSpec.describe "OrdersControllers", type: :request do
     { order: { name:@order.name, address: @order.address, email: @order.email, pay_type: @order.pay_type } }
   end
 
-  def authorize
-    expect_any_instance_of(OrdersController).to receive(:authorize).and_return(true)
-  end
+  # def authorize
+  #   expect_any_instance_of(OrdersController).to receive(:authorize).and_return(true)
+  # end
 
   it 'should get index' do
     # authorize
